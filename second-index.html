@@ -7,13 +7,14 @@
      
         <video autoplay style="width:300px;height:300px;"></video>
      <img src="" id="img" style="width:300px;height:300px;" alt="" srcset="">
+
      <button id="snap_picture">picture</button>
      <button id="record_video">video</button>
      <canvas  style="width:300px;height:300px; display:none;" id="canvas"></canvas>
-
+      
 
      <img id="myImg" style="width:300px;height:300px;" src="images/example114.JPG" />
-     <canvas id="myCanvas" />
+     <canvas id="myCanvas"></canvas>
 
         <script>
         
@@ -22,7 +23,7 @@
 
 
 
-
+        const canvas = document.getElementById('myCanvas')
 
 
 
@@ -84,7 +85,7 @@ console.log(detections)
 // resize the detected boxes in case your displayed image has a different size then the original
 const detectionsForSize = faceapi.resizeResults(detections, { width: queryImage1.width, height: queryImage1.height })
 // draw them into a canvas
-const canvas = document.getElementById('myCanvas')
+
 canvas.width = queryImage1.width
 canvas.height = queryImage1.height
 faceapi.drawDetection(canvas, detectionsForSize, { withScore: true })

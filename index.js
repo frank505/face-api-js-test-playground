@@ -93,7 +93,6 @@ async function LoadUserImage()
   .detectAllFaces(referenceImage)
   .withFaceLandmarks()
   .withFaceDescriptors()
-
   //results = results.map(fd => fd.forSize(width, height))
 
 if (!results.length) {
